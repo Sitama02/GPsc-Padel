@@ -21,19 +21,7 @@ const TEAMS = [
 // Status options: 'LIVE', 'SCHEDULED', 'FINISHED'
 // Edit this list to add matches and update scores
 const MATCHES = [
-    // --- Live Matches ---
-    // {
-    //     id: 'm1', t1: 't1', t2: 't3',
-    //     time: 'Now Playing', court: 'Center Court', status: 'LIVE',
-    //     scores: [{s1: 6, s2: 4}, {s1: 3, s2: 3}], // Team 1 won first set, second set tied
-    //     round: 'Group A'
-    // },
-    // {
-    //     id: 'm2', t1: 't2', t2: 't4',
-    //     time: 'Now Playing', court: 'Court 2', status: 'LIVE',
-    //     scores: [{s1: 2, s2: 5}], // First set in progress
-    //     round: 'Group A'
-    // },
+
 
     // --- Upcoming Matches ---
     {
