@@ -1,57 +1,138 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ragab Padel Tournament</title>
     
-    <!-- 1. Styles -->
+    <!-- Tailwind CSS (CDN) -->
     <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
-    
-    <!-- 2. React & Babel (The Engine) -->
-    <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
-    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
-    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
 
+    <!-- Custom Config -->
     <script>
-      tailwind.config = {
-        theme: {
-          extend: {
-            fontFamily: {
-              sans: ['Outfit', 'sans-serif'],
-            },
-            colors: {
-              padel: {
-                blue: '#005580',
-                dark: '#0f172a',
-                accent: '#bef264', // Lime green
-                court: '#3b82f6',
-              }
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: { sans: ['Outfit', 'sans-serif'] },
+                    colors: {
+                        padel: {
+                            dark: '#0f172a',
+                            accent: '#bef264', // Lime green
+                            blue: '#005580'
+                        }
+                    }
+                }
             }
-          }
         }
-      }
     </script>
-  <script type="importmap">
+    <style>
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #1e293b; }
+        ::-webkit-scrollbar-thumb { background: #475569; border-radius: 4px; }
+        ::-webkit-scrollbar-thumb:hover { background: #64748b; }
+        
+        .fade-in { animation: fadeIn 0.5s ease-in; }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+    </style>
+<script type="importmap">
 {
   "imports": {
     "react": "https://aistudiocdn.com/react@^19.2.0",
-    "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.0/",
     "react/": "https://aistudiocdn.com/react@^19.2.0/"
   }
 }
 </script>
 </head>
-  <body class="bg-slate-900 text-white antialiased selection:bg-padel-accent selection:text-padel-dark">
-    <div id="root"></div>
-    
-    <!-- 3. Your Data -->
-    <script type="text/babel" data-presets="typescript" src="./constants.ts"></script>
-    
-    <!-- 4. Your App Logic -->
-    <script type="text/babel" data-presets="typescript" src="./index.tsx"></script>
-  </body>
+<body class="bg-slate-900 text-white min-h-screen flex flex-col selection:bg-padel-accent selection:text-slate-900">
+
+    <!-- NAVIGATION -->
+    <nav class="sticky top-0 z-50 bg-slate-900/90 backdrop-blur-md border-b border-slate-800 shadow-lg">
+        <div class="max-w-5xl mx-auto px-4 h-16 flex items-center justify-between">
+            <!-- Logo -->
+            <div class="flex items-center gap-2">
+                <div class="w-8 h-8 bg-padel-accent rounded-full flex items-center justify-center text-slate-900 font-bold text-lg">R</div>
+                <span class="font-bold text-xl tracking-tight text-white hidden sm:block">
+                    Ragab<span class="text-padel-accent">Padel</span>
+                </span>
+            </div>
+            
+            <!-- Tabs -->
+            <div class="flex items-center gap-2">
+                <button id="btn-matches" class="px-4 py-2 rounded-md text-sm font-medium flex items-center gap-2 transition-all bg-slate-800 text-padel-accent shadow-sm ring-1 ring-slate-700">
+                    <span>📅</span> Matches
+                </button>
+                <button id="btn-standings" class="px-4 py-2 rounded-md text-sm font-medium flex items-center gap-2 transition-all text-slate-400 hover:text-white hover:bg-slate-800/50">
+                    <span>🏆</span> Standings
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- MAIN CONTENT -->
+    <main class="flex-grow max-w-5xl mx-auto px-4 py-8 w-full">
+        
+        <!-- MATCHES VIEW -->
+        <div id="view-matches" class="space-y-8 fade-in">
+            <!-- Matches will be injected here by app.js -->
+        </div>
+
+        <!-- STANDINGS VIEW -->
+        <div id="view-standings" class="hidden fade-in">
+            <div class="bg-slate-800 rounded-xl border border-slate-700 overflow-hidden shadow-xl">
+                <div class="p-6 bg-gradient-to-r from-slate-800 to-slate-900 border-b border-slate-700">
+                    <h2 class="text-2xl font-bold text-white flex items-center gap-2">
+                        <span class="text-3xl">🏆</span> Tournament Standings
+                    </h2>
+                    <p class="text-slate-400 mt-1">Group Stage Leaderboard</p>
+                </div>
+                <div class="overflow-x-auto">
+                    <table class="w-full text-left">
+                        <thead>
+                            <tr class="bg-slate-900/50 text-slate-400 text-xs uppercase tracking-wider">
+                                <th class="p-4 font-semibold">#</th>
+                                <th class="p-4 font-semibold">Team</th>
+                                <th class="p-4 font-semibold text-center">P</th>
+                                <th class="p-4 font-semibold text-center">W</th>
+                                <th class="p-4 font-semibold text-center">L</th>
+                                <th class="p-4 font-semibold text-right">Pts</th>
+                            </tr>
+                        </thead>
+                        <tbody id="standings-body" class="divide-y divide-slate-700/50">
+                            <!-- Rows injected by app.js -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- Rules Legend -->
+            <div class="mt-6 grid grid-cols-1 md:grid-cols-3 gap-4">
+                <div class="bg-slate-800/50 p-4 rounded-lg border border-slate-700/50">
+                    <h3 class="text-padel-accent font-bold text-sm uppercase mb-2">Points</h3>
+                    <p class="text-slate-400 text-xs">Win = 3 Points</p>
+                    <p class="text-slate-400 text-xs">Loss = 1 Point</p>
+                </div>
+                <div class="bg-slate-800/50 p-4 rounded-lg border border-slate-700/50">
+                    <h3 class="text-padel-accent font-bold text-sm uppercase mb-2">Tie Breaker</h3>
+                    <p class="text-slate-400 text-xs">1. Head-to-Head</p>
+                    <p class="text-slate-400 text-xs">2. Set Difference</p>
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="border-t border-slate-800 py-8 text-center text-slate-500 text-sm">
+        <p>© 2024 Ragab Padel Tournament.</p>
+    </footer>
+
+    <!-- LOGIC -->
+    <script src="app.js"></script>
+</body>
 </html>
