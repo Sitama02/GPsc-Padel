@@ -1,4 +1,2 @@
-
-// This file is intentionally left empty to remove dependencies on backend services.
-// The app is now running in static manual mode.
+// Function intentionally left empty to support static deployment without backend.
 export const sendMessageToGemini = async () => { return ""; }
