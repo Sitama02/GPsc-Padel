@@ -78,7 +78,7 @@
 
     <!-- 4. FOOTER -->
     <footer class="border-t border-slate-800 mt-auto py-8 text-center text-slate-500 text-sm">
-        <p>© 2024 Ragab Padel Tournament.</p>
+        <p>© 2025 Ragab Padel Tournament.</p>
         <p class="text-xs mt-1 opacity-50">Managed via local configuration.</p>
     </footer>
 
@@ -90,31 +90,31 @@
         
         const TEAMS = [
             // --- GROUP A (5 Teams) ---
-            { id: 'a1', name: 'premedion 2', group: 'A', color: 'bg-blue-600', players: ['Player 1', 'Player 2', 'Sub'] },
-            { id: 'a2', name: 'Legal Department', group: 'A', color: 'bg-blue-600', players: ['Player 1', 'Player 2', 'Sub'] },
-            { id: 'a3', name: 'Supervision management', group: 'A', color: 'bg-blue-600', players: ['Player 1', 'Player 2', 'Sub'] },
-            { id: 'a4', name: 'Operation management 1', group: 'A', color: 'bg-blue-600', players: ['Player 1', 'Player 2', 'Sub'] },
-            { id: 'a5', name: 'Cinema 2', group: 'A', color: 'bg-blue-600', players: ['Player 1', 'Player 2', 'Sub'] },
+            { id: 'a1', name: 'premedion 2', group: 'A', color: 'bg-blue-600' },
+            { id: 'a2', name: 'Legal Department', group: 'A', color: 'bg-blue-600' },
+            { id: 'a3', name: 'Supervision management', group: 'A', color: 'bg-blue-600' },
+            { id: 'a4', name: 'Operation management 1', group: 'A', color: 'bg-blue-600' },
+            { id: 'a5', name: 'Cinema 2', group: 'A', color: 'bg-blue-600' },
 
             // --- GROUP B (5 Teams) ---
-            { id: 'b1', name: 'Premrdion1', group: 'B', color: 'bg-red-600', players: ['Player 1', 'Player 2', 'Sub'] },
-            { id: 'b2', name: 'Engineering managment 1', group: 'B', color: 'bg-red-600', players: ['Player 1', 'Player 2', 'Sub'] },
-            { id: 'b3', name: 'Hotels finance 1', group: 'B', color: 'bg-red-600', players: ['Player 1', 'Player 2', 'Sub'] },
-            { id: 'b4', name: 'Finanace Management 1', group: 'B', color: 'bg-red-600', players: ['Player 1', 'Player 2', 'Sub'] },
-            { id: 'b5', name: 'GPSC 2', group: 'B', color: 'bg-red-600', players: ['Player 1', 'Player 2', 'Sub'] },
+            { id: 'b1', name: 'Premrdion1', group: 'B', color: 'bg-red-600' },
+            { id: 'b2', name: 'Engineering managment 1', group: 'B', color: 'bg-red-600' },
+            { id: 'b3', name: 'Hotels finance 1', group: 'B', color: 'bg-red-600' },
+            { id: 'b4', name: 'Finanace Management 1', group: 'B', color: 'bg-red-600' },
+            { id: 'b5', name: 'GPSC 2', group: 'B', color: 'bg-red-600' },
 
             // --- GROUP C (5 Teams) ---
-            { id: 'c1', name: 'Ragab Motors', group: 'C', color: 'bg-green-600', players: ['Player 1', 'Player 2', 'Sub'] },
-            { id: 'c2', name: 'Engineering managment 2', group: 'C', color: 'bg-green-600', players: ['Player 1', 'Player 2', 'Sub'] },
-            { id: 'c3', name: 'Hotels finance 2', group: 'C', color: 'bg-green-600', players: ['Player 1', 'Player 2', 'Sub'] },
-            { id: 'c4', name: 'Red Rose', group: 'C', color: 'bg-green-600', players: ['Player 1', 'Player 2', 'Sub'] },
-            { id: 'c5', name: 'Cinema 1', group: 'C', color: 'bg-green-600', players: ['Player 1', 'Player 2', 'Sub'] },
+            { id: 'c1', name: 'Ragab Motors', group: 'C', color: 'bg-green-600' },
+            { id: 'c2', name: 'Engineering managment 2', group: 'C', color: 'bg-green-600' },
+            { id: 'c3', name: 'Hotels finance 2', group: 'C', color: 'bg-green-600' },
+            { id: 'c4', name: 'Red Rose', group: 'C', color: 'bg-green-600' },
+            { id: 'c5', name: 'Cinema 1', group: 'C', color: 'bg-green-600' },
 
             // --- GROUP D (4 Teams) ---
-            { id: 'd1', name: 'Hilton ', group: 'D', color: 'bg-purple-600', players: ['Player 1', 'Player 2', 'Sub'] },
-            { id: 'd2', name: 'Finanace Management 2', group: 'D', color: 'bg-purple-600', players: ['Player 1', 'Player 2', 'Sub'] },
-            { id: 'd3', name: 'Operation management 2', group: 'D', color: 'bg-purple-600', players: ['Player 1', 'Player 2', 'Sub'] },
-            { id: 'd4', name: 'GPSC 1', group: 'D', color: 'bg-purple-600', players: ['Player 1', 'Player 2', 'Sub'] },
+            { id: 'd1', name: 'Hilton ', group: 'D', color: 'bg-purple-600' },
+            { id: 'd2', name: 'Finanace Management 2', group: 'D', color: 'bg-purple-600' },
+            { id: 'd3', name: 'Operation management 2', group: 'D', color: 'bg-purple-600' },
+            { id: 'd4', name: 'GPSC 1', group: 'D', color: 'bg-purple-600' },
         ];
 
         /* 
@@ -127,36 +127,56 @@
         */
         const MATCHES = [
             // --- TUESDAY (Nov 25) ---
-            { id: 'm1', t1: 'a1', t2: 'a2', time: '2024-11-25T17:40:00', court: 'Court 1', round: 'Group A', status: 'SCHEDULED', scores: [], winnerId: null },
-            { id: 'm2', t1: 'b1', t2: 'b2', time: '2024-11-25T17:40:00', court: 'Court 2', round: 'Group B', status: 'SCHEDULED', scores: [], winnerId: null },
-            { id: 'm3', t1: 'c1', t2: 'c2', time: '2024-11-25T17:00:00', court: 'Court 3', round: 'Group C', status: 'SCHEDULED', scores: [], winnerId: null },
+            { id: 'm1', t1: 'b3', t2: 'b4', time: '2025-11-25T17:00:00', court: 'Court 1', round: 'Group B', status: 'SCHEDULED', scores: [], winnerId: null },
+            { id: 'm2', t1: 'a3', t2: 'a4', time: '2025-11-25T17:00:00', court: 'Court 2', round: 'Group A', status: 'SCHEDULED', scores: [], winnerId: null },
+            { id: 'm3', t1: 'c4', t2: 'c3', time: '2025-11-25T17:20:00', court: 'Court 1', round: 'Group C', status: 'SCHEDULED', scores: [], winnerId: null },
 
-            { id: 'm4', t1: 'd1', t2: 'd2', time: '2024-11-25T18:00:00', court: 'Court 1', round: 'Group D', status: 'SCHEDULED', scores: [], winnerId: null },
-            { id: 'm5', t1: 'a3', t2: 'a4', time: '2024-11-25T18:00:00', court: 'Court 2', round: 'Group A', status: 'SCHEDULED', scores: [], winnerId: null },
-            { id: 'm6', t1: 'b3', t2: 'b4', time: '2024-11-25T18:00:00', court: 'Court 3', round: 'Group B', status: 'SCHEDULED', scores: [], winnerId: null },
+            { id: 'm4', t1: 'd1', t2: 'd2', time: '2025-11-25T17:20:00', court: 'Court 1', round: 'Group D', status: 'SCHEDULED', scores: [], winnerId: null },
+            { id: 'm5', t1: 'a1', t2: 'a2', time: '2025-11-25T17:40:00', court: 'Court 2', round: 'Group A', status: 'SCHEDULED', scores: [], winnerId: null },
+            { id: 'm6', t1: 'd3', t2: 'd4', time: '2025-11-25T17:40:00', court: 'Court 1', round: 'Group D', status: 'SCHEDULED', scores: [], winnerId: null },
 
-            { id: 'm7', t1: 'c3', t2: 'c4', time: '2024-11-25T25:00:00', court: 'Court 1', round: 'Group C', status: 'SCHEDULED', scores: [], winnerId: null },
-            { id: 'm8', t1: 'd3', t2: 'd4', time: '2024-11-25T25:00:00', court: 'Court 2', round: 'Group D', status: 'SCHEDULED', scores: [], winnerId: null },
-            { id: 'm9', t1: 'a5', t2: 'a1', time: '2024-11-25T25:00:00', court: 'Court 3', round: 'Group A', status: 'SCHEDULED', scores: [], winnerId: null },
+            { id: 'm7', t1: 'b2', t2: 'b1', time: '2025-11-25T18:00:00', court: 'Court 1', round: 'Group B', status: 'SCHEDULED', scores: [], winnerId: null },
+            { id: 'm8', t1: 'a1', t2: 'a3', time: '2025-11-25T18:00:00', court: 'Court 2', round: 'Group A', status: 'SCHEDULED', scores: [], winnerId: null },
+            { id: 'm9', t1: 'a2', t2: 'a5', time: '2025-11-25T18:20:00', court: 'Court 1', round: 'Group A', status: 'SCHEDULED', scores: [], winnerId: null },
 
-            { id: 'm10', t1: 'b5', t2: 'b1', time: '2024-11-25T20:00:00', court: 'Court 1', round: 'Group B', status: 'SCHEDULED', scores: [], winnerId: null },
-            { id: 'm11', t1: 'c5', t2: 'c1', time: '2024-11-25T20:00:00', court: 'Court 2', round: 'Group C', status: 'SCHEDULED', scores: [], winnerId: null },
+            { id: 'm10', t1: 'b2', t2: 'b5', time: '2025-11-25T18:20:00', court: 'Court 1', round: 'Group B', status: 'SCHEDULED', scores: [], winnerId: null },
+            { id: 'm11', t1: 'b3', t2: 'b1', time: '2025-11-25T18:40:00', court: 'Court 2', round: 'Group B', status: 'SCHEDULED', scores: [], winnerId: null },
+
+            { id: 'm12', t1: 'c5', t2: 'c2', time: '2025-11-25T18:40:00', court: 'Court 1', round: 'Group C', status: 'SCHEDULED', scores: [], winnerId: null },
+            { id: 'm13', t1: 'd1', t2: 'd3', time: '2025-11-25T19:00:00', court: 'Court 2', round: 'Group D', status: 'SCHEDULED', scores: [], winnerId: null },
+            { id: 'm14', t1: 'd2', t2: 'd4', time: '2025-11-25T19:00:00', court: 'Court 1', round: 'Group D', status: 'SCHEDULED', scores: [], winnerId: null },
+
+            { id: 'm15', t1: 'a1', t2: 'a4', time: '2025-11-25T19:20:00', court: 'Court 1', round: 'Group A', status: 'SCHEDULED', scores: [], winnerId: null },
+            { id: 'm16', t1: 'a3', t2: 'a5', time: '2025-11-25T19:20:00', court: 'Court 2', round: 'Group A', status: 'SCHEDULED', scores: [], winnerId: null },
+            { id: 'm17', t1: 'b1', t2: 'b4', time: '2025-11-25T19:40:00', court: 'Court 1', round: 'Group B', status: 'SCHEDULED', scores: [], winnerId: null },
+
+            { id: 'm18', t1: 'b3', t2: 'b5', time: '2025-11-25T19:40:00', court: 'Court 1', round: 'Group B', status: 'SCHEDULED', scores: [], winnerId: null },
+            { id: 'm19', t1: 'c3', t2: 'c5', time: '2025-11-25T20:00:00', court: 'Court 2', round: 'Group C', status: 'SCHEDULED', scores: [], winnerId: null },
 
             // --- WEDNESDAY (Nov 26) ---
-            { id: 'm12', t1: 'a2', t2: 'a3', time: '2024-11-26T17:00:00', court: 'Court 1', round: 'Group A', status: 'SCHEDULED', scores: [], winnerId: null },
-            { id: 'm13', t1: 'b2', t2: 'b3', time: '2024-11-26T17:00:00', court: 'Court 2', round: 'Group B', status: 'SCHEDULED', scores: [], winnerId: null },
-            { id: 'm14', t1: 'c2', t2: 'c3', time: '2024-11-26T17:00:00', court: 'Court 3', round: 'Group C', status: 'SCHEDULED', scores: [], winnerId: null },
+            { id: 'm20', t1: 'd1', t2: 'd4', time: '2025-11-26T17:00:00', court: 'Court 1', round: 'Group D', status: 'SCHEDULED', scores: [], winnerId: null },
+            { id: 'm21', t1: 'd2', t2: 'd3', time: '2025-11-26T17:00:00', court: 'Court 2', round: 'Group D', status: 'SCHEDULED', scores: [], winnerId: null },
+            { id: 'm22', t1: 'c1', t2: 'c2', time: '2025-11-26T17:20:00', court: 'Court 1', round: 'Group C', status: 'SCHEDULED', scores: [], winnerId: null },
 
-            { id: 'm15', t1: 'd1', t2: 'd3', time: '2024-11-26T18:00:00', court: 'Court 1', round: 'Group D', status: 'SCHEDULED', scores: [], winnerId: null },
-            { id: 'm16', t1: 'a4', t2: 'a5', time: '2024-11-26T18:00:00', court: 'Court 2', round: 'Group A', status: 'SCHEDULED', scores: [], winnerId: null },
-            { id: 'm17', t1: 'b4', t2: 'b5', time: '2024-11-26T18:00:00', court: 'Court 3', round: 'Group B', status: 'SCHEDULED', scores: [], winnerId: null },
+            { id: 'm23', t1: 'a2', t2: 'a4', time: '2025-11-26T17:20:00', court: 'Court 1', round: 'Group A', status: 'SCHEDULED', scores: [], winnerId: null },
+            { id: 'm24', t1: 'a1', t2: 'a5', time: '2025-11-26T17:40:00', court: 'Court 2', round: 'Group A', status: 'SCHEDULED', scores: [], winnerId: null },
+            { id: 'm25', t1: 'b1', t2: 'b5', time: '2025-11-26T17:40:00', court: 'Court 1', round: 'Group B', status: 'SCHEDULED', scores: [], winnerId: null },
 
-            { id: 'm18', t1: 'c4', t2: 'c5', time: '2024-11-26T25:00:00', court: 'Court 1', round: 'Group C', status: 'SCHEDULED', scores: [], winnerId: null },
-            { id: 'm25', t1: 'd2', t2: 'd4', time: '2024-11-26T25:00:00', court: 'Court 2', round: 'Group D', status: 'SCHEDULED', scores: [], winnerId: null },
-            { id: 'm20', t1: 'a1', t2: 'a3', time: '2024-11-26T25:00:00', court: 'Court 3', round: 'Group A', status: 'SCHEDULED', scores: [], winnerId: null },
+            { id: 'm26', t1: 'b2', t2: 'b4', time: '2025-11-26T18:00:00', court: 'Court 1', round: 'Group B', status: 'SCHEDULED', scores: [], winnerId: null },
+            { id: 'm27', t1: 'c1', t2: 'c5', time: '2025-11-26T18:00:00', court: 'Court 2', round: 'Group C', status: 'SCHEDULED', scores: [], winnerId: null },
+            { id: 'm28', t1: 'c2', t2: 'c4', time: '2025-11-26T18:20:00', court: 'Court 1', round: 'Group C', status: 'SCHEDULED', scores: [], winnerId: null },
 
-            { id: 'm21', t1: 'b1', t2: 'b3', time: '2024-11-26T20:00:00', court: 'Court 1', round: 'Group B', status: 'SCHEDULED', scores: [], winnerId: null },
-            { id: 'm22', t1: 'c1', t2: 'c3', time: '2024-11-26T20:00:00', court: 'Court 2', round: 'Group C', status: 'SCHEDULED', scores: [], winnerId: null },
+            { id: 'm29', t1: 'c3', t2: 'c1', time: '2025-11-26T18:20:00', court: 'Court 1', round: 'Group C', status: 'SCHEDULED', scores: [], winnerId: null },
+            { id: 'm30', t1: 'a2', t2: 'a3', time: '2025-11-26T18:40:00', court: 'Court 2', round: 'Group A', status: 'SCHEDULED', scores: [], winnerId: null },
+
+            { id: 'm31', t1: 'a4', t2: 'a5', time: '2025-11-26T18:40:00', court: 'Court 1', round: 'Group A', status: 'SCHEDULED', scores: [], winnerId: null },
+            { id: 'm32', t1: 'b2', t2: 'b3', time: '2025-11-26T19:00:00', court: 'Court 2', round: 'Group B', status: 'SCHEDULED', scores: [], winnerId: null },
+            { id: 'm33', t1: 'b5', t2: 'b4', time: '2025-11-26T19:00:00', court: 'Court 1', round: 'Group B', status: 'SCHEDULED', scores: [], winnerId: null },
+
+            { id: 'm34', t1: 'c2', t2: 'c3', time: '2025-11-26T19:20:00', court: 'Court 1', round: 'Group C', status: 'SCHEDULED', scores: [], winnerId: null },
+            { id: 'm35', t1: 'c4', t2: 'c5', time: '2025-11-26T19:20:00', court: 'Court 2', round: 'Group C', status: 'SCHEDULED', scores: [], winnerId: null },
+            { id: 'm36', t1: 'c1', t2: 'c4', time: '2025-11-26T19:40:00', court: 'Court 1', round: 'Group C', status: 'SCHEDULED', scores: [], winnerId: null },
+
         ];
 
         // ==========================================
