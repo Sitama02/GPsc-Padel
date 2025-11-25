@@ -127,13 +127,13 @@
         */
         const MATCHES = [
             // --- TUESDAY (Nov 25) ---
-            { id: 'm1', t1: 'b3', t2: 'b4', time: '2025-11-25T17:00:00', round: 'Group B', status: 'SCHEDULED', scores: [2-0], winnerId: 'b3' },
-            { id: 'm2', t1: 'a3', t2: 'a4', time: '2025-11-25T17:00:00', round: 'Group A', status: 'SCHEDULED', scores: [0-2], winnerId: 'a4' },
-            { id: 'm3', t1: 'c4', t2: 'c3', time: '2025-11-25T17:20:00', round: 'Group C', status: 'SCHEDULED', scores: [2-0], winnerId: 'c4' },
+            { id: 'm1', t1: 'b3', t2: 'b4', time: '2025-11-25T17:00:00', round: 'Group B', status: 'SCHEDULED', scores: [{t1: 2, t2: 0}], winnerId: 'b3' },
+            { id: 'm2', t1: 'a3', t2: 'a4', time: '2025-11-25T17:00:00', round: 'Group A', status: 'SCHEDULED', scores: [{t1: 0, t2: 2}], winnerId: 'a4' },
+            { id: 'm3', t1: 'c4', t2: 'c3', time: '2025-11-25T17:20:00', round: 'Group C', status: 'SCHEDULED', scores: [{t1: 2, t2: 0}], winnerId: 'c4' },
 
-            { id: 'm4', t1: 'd1', t2: 'd2', time: '2025-11-25T17:20:00', round: 'Group D', status: 'SCHEDULED', scores: [0-2], winnerId: 'd2' },
-            { id: 'm5', t1: 'a1', t2: 'a2', time: '2025-11-25T17:40:00', round: 'Group A', status: 'SCHEDULED', scores: [], winnerId: null },
-            { id: 'm6', t1: 'd3', t2: 'd4', time: '2025-11-25T17:40:00', round: 'Group D', status: 'SCHEDULED', scores: [], winnerId: null },
+            { id: 'm4', t1: 'd1', t2: 'd2', time: '2025-11-25T17:20:00', round: 'Group D', status: 'SCHEDULED', scores: [{t1: 0, t2: 2}], winnerId: 'd2' },
+            { id: 'm5', t1: 'a1', t2: 'a2', time: '2025-11-25T17:40:00', round: 'Group A', status: 'SCHEDULED', scores: [{t1: 0, t2: 2}], winnerId: 'a2' },
+            { id: 'm6', t1: 'd3', t2: 'd4', time: '2025-11-25T17:40:00', round: 'Group D', status: 'SCHEDULED', scores: [{t1: 0, t2: 2}], winnerId: 'd4' },
 
             { id: 'm7', t1: 'b2', t2: 'b1', time: '2025-11-25T18:00:00', round: 'Group B', status: 'SCHEDULED', scores: [], winnerId: null },
             { id: 'm8', t1: 'a1', t2: 'a3', time: '2025-11-25T18:00:00', round: 'Group A', status: 'SCHEDULED', scores: [], winnerId: null },
