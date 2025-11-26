@@ -193,9 +193,8 @@
         // LOGIC & RENDERING (DO NOT EDIT BELOW)
         // ==========================================
         
-        // --- Helper Functions ---
         function getTeam(id) {
-            return TEAMS.find(t => t.id === id) || { name: 'Unknown', color: 'bg-gray-500', players: [] };
+            return TEAMS.find(t => t.id === id) || { name: 'TBD', color: 'bg-gray-500', players: [] };
         }
 
         function formatDate(isoString) {
@@ -239,7 +238,7 @@
                         <div class="flex items-center gap-2">
                             <span class="font-semibold text-padel-accent/80">${match.round}</span>
                             <span>•</span>
-
+                            <span>${match.court}</span>
                         </div>
                         <div class="flex items-center gap-2">
                             <span class="font-mono text-white">${formatDate(match.time)}</span>
@@ -255,7 +254,7 @@
                                 </div>
                                 <div class="flex flex-col">
                                     <span class="text-base leading-tight">${t1.name}</span>
-                                    
+                                    <span class="text-xs text-slate-500 font-normal">${t1.players.length ? t1.players.join(' / ') : '-'}</span>
                                 </div>
                             </div>
                             ${scoresHtml1}
@@ -268,7 +267,7 @@
                                 </div>
                                 <div class="flex flex-col">
                                     <span class="text-base leading-tight">${t2.name}</span>
-                                  
+                                    <span class="text-xs text-slate-500 font-normal">${t2.players.length ? t2.players.join(' / ') : '-'}</span>
                                 </div>
                             </div>
                             ${scoresHtml2}
@@ -350,7 +349,9 @@
                 
                 // Calculate Stats
                 const stats = groupTeams.map(team => {
-                    const teamMatches = MATCHES.filter(m => (m.t1 === team.id || m.t2 === team.id) && m.status === 'FINISHED');
+                    // IMPORTANT: Only count matches that are part of the GROUP stage
+                    const teamMatches = MATCHES.filter(m => (m.t1 === team.id || m.t2 === team.id) && m.status === 'FINISHED' && m.round.includes('Group'));
+                    
                     const wins = teamMatches.filter(m => m.winnerId === team.id).length;
                     const losses = teamMatches.length - wins;
                     // 3 pts for Win, 1 pt for playing but losing
